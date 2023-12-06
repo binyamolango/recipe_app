@@ -28,14 +28,14 @@
 
   <div>
     <%= form.label :cooking_time, "Cooking time (in hour)", style: "display: block" %>
-    <%= form.text_area :cooking_time, placeholder: "1" %>
+    <%= form.text_field :cooking_time, placeholder: "1" %>
   </div>
 
   <div>
     <%= form.radio_button :public, true %>
-    <%= form.label :public_true, "Public" %>
+    <%= form.label :public, "Public" %>
     <%= form.radio_button :public, false %>
-    <%= form.label :public_false, "Private" %>
+    <%= form.label :public, "Private" %>
   </div>
 
   <div>
