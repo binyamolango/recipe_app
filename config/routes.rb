@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :recipe_foods
+  resources :foods
   devise_for :users, :controllers => { :confirmations => 'devise/confirmations' }
 
   devise_scope :user do
