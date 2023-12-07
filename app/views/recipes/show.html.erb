@@ -23,5 +23,7 @@
     <%= f.submit "Update Recipe", id: "submit_button", style: "display: none;" %>
   <% end %>
 
+  <%= button_to "Add ingredient", new_recipe_recipe_food_path(@recipe), method: :get %>
+
   <%= link_to "Back to recipes", recipes_path %>
 </div>
