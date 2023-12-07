@@ -24,6 +24,12 @@
   <% end %>
 
   <%= button_to "Add ingredient", new_recipe_recipe_food_path(@recipe), method: :get %>
+  <% @recipe_foods.each do |recipe_food| %>
+    <%= render recipe_food %>
+    <p>Food: <%= recipe_food.food.name %></p>
+    <p>Quaantity: <%= recipe_food.quantity %></p>
+    <p>Value: <%= recipe_food.value(recipe_food.food_id, recipe_food.id) %></p>
+  <% end %>
 
   <%= link_to "Back to recipes", recipes_path %>
 </div>
