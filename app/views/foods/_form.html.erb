@@ -27,12 +27,12 @@
 
     <div>
       <%= form.label :price, "Unit price", style: "display: block" %>
-      <%= form.text_field :price, placeholder: "15" %>
+      <%= form.number_field :price, placeholder: "15" %>
     </div>
 
     <div>
       <%= form.label :quantity, style: "display: block" %>
-      <%= form.text_field :quantity, placeholder: "5" %>
+      <%= form.number_field :quantity, placeholder: "5" %>
     </div>
 
     <%= form.submit %>
