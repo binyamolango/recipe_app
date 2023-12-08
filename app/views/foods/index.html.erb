@@ -17,7 +17,7 @@
         <% @foods.each do |food| %>
           <%= render food %>
           <tr>
-            <th scope="row"><%= food.name %></th>
+            <th scope="row"><%= link_to food.name, food %></th>
             <td><%= food.measurement_unit %></td>
             <td>$<%= food.price %></td>
             <td>
