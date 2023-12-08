@@ -89,6 +89,9 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.11.8, < 3)
     builder (3.2.4)
+    bullet (7.1.4)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     cancancan (3.5.0)
     capybara (3.39.2)
       addressable
@@ -127,6 +130,7 @@ GEM
     execjs (2.9.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    google-protobuf (3.25.1-arm64-darwin)
     google-protobuf (3.25.1-x64-mingw-ucrt)
     google-protobuf (3.25.1-x86_64-linux)
     i18n (1.14.1)
@@ -174,6 +178,8 @@ GEM
     net-smtp (0.4.0)
       net-protocol
     nio4r (2.7.0)
+    nokogiri (1.15.5-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.15.5-x64-mingw-ucrt)
       racc (~> 1.4)
     nokogiri (1.15.5-x86_64-linux)
@@ -258,6 +264,8 @@ GEM
     rspec-support (3.12.1)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
+    sass-embedded (1.66.1-arm64-darwin)
+      google-protobuf (~> 3.23)
     sass-embedded (1.66.1-x64-mingw-ucrt)
       google-protobuf (~> 3.23)
     sass-embedded (1.66.1-x86_64-linux-gnu)
@@ -287,6 +295,7 @@ GEM
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2023.3)
       tzinfo (>= 1.0.0)
+    uniform_notifier (1.16.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -304,12 +313,14 @@ GEM
     zeitwerk (2.6.12)
 
 PLATFORMS
+  arm64-darwin-21
   x64-mingw-ucrt
   x86_64-linux
 
 DEPENDENCIES
   bootsnap
   bootstrap (~> 5.3.2)
+  bullet
   cancancan
   capybara
   dartsass-sprockets
