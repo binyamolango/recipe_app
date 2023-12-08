@@ -1,5 +1,9 @@
 @import "bootstrap";
 
+a:active {
+  text-decoration: underline;
+}
+
 .container {
   width: 80%;
   margin: 0 auto;
