@@ -10,7 +10,11 @@ a:active {
   max-width: 768px;
 }
 
-.recipe_cont {
+// recipe#index
+
+.recipe_cont,
+.recipe_detail_cont,
+.generate_btn {
   display: flex;
   justify-content: space-between;
 }
@@ -25,4 +29,27 @@ a:active {
 
 .new_recipe_btn {
   text-align: center;
+}
+
+// recipe#show
+
+.recipe_name {
+  text-align: center;
+}
+
+.recipe_detail_cont {
+  margin: 1.5em 0 2.5em 0;
+}
+
+.generate_btn {
+  margin: 1.5em 0 1.5em 0;
+}
+
+.line {
+  border: 2px solid black;
+  border-radius: 0 50% 0 50%;
+}
+
+.recipe_foods {
+  margin: 3em 0;
 }
