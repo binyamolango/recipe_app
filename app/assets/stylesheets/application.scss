@@ -1,1 +1,24 @@
 @import "bootstrap";
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 768px;
+}
+
+.recipe_cont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe_name h5 a {
+  text-decoration: none;
+}
+
+.recipe_desc {
+  width: 60%;
+}
+
+.new_recipe_btn {
+  text-align: center;
+}

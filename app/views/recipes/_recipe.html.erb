@@ -1,14 +1,14 @@
-<div id="<%= dom_id recipe %>">
-  <h2>
-    <%= link_to recipe.name, recipe %>
-  </h2>
+<div id="<%= dom_id recipe %>" class="card mb-3 container">
+  <div class="card-body recipe_cont">
+    <div class="recipe_name">
+      <h5 class="card-title"><%= link_to recipe.name, recipe %></h5>
+      <% if recipe.user_id == current_user.id %>
+        <%= link_to "Remove", recipe, method: :delete %>
+      <% end %>
+    </div>
 
-  <p>
-    <%= recipe.description %>
-  </p>
-
-  <% if recipe.user_id == current_user.id %>
-    <%= link_to "Remove", recipe, method: :delete %>
-  <% end %>
-
+    <div class="recipe_desc">
+      <p class="card-text"><%= recipe.description %></p>
+    </div>
+  </div>
 </div>
