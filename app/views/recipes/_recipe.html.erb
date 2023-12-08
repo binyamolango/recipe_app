@@ -1,12 +1,14 @@
 <div id="<%= dom_id recipe %>">
-  <p>
-    <strong>Name:</strong>
-    <%= recipe.name %>
-  </p>
+  <h2>
+    <%= link_to recipe.name, recipe %>
+  </h2>
 
   <p>
-    <strong>Description:</strong>
     <%= recipe.description %>
   </p>
+
+  <% if recipe.user_id == current_user.id %>
+    <%= link_to "Remove", recipe, method: :delete %>
+  <% end %>
 
 </div>
