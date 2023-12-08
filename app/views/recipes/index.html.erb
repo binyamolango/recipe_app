@@ -1,9 +1,13 @@
-<div id="recipes">
-  <% @recipes.each do |recipe| %>
-    <%= render recipe %>
-  <% end %>
-</div>
+<div class="container">
 
-<div class="new_recipe_btn">
-  <%= link_to "New recipe", new_recipe_path, class: "btn btn-primary" %>
+  <div class="new_recipe_btn">
+    <%= link_to "Add recipe", new_recipe_path, class: "btn btn-primary" %>
+  </div>
+
+  <div id="recipes">
+    <% @recipes.each do |recipe| %>
+      <%= render recipe %>
+    <% end %>
+  </div>
+
 </div>
