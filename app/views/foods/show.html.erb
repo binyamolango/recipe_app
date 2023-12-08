@@ -6,8 +6,10 @@
   <p>Unit price: $<%= @food.price %></p>
   <p>Quantity: <%= @food.quantity %></p>
 
-  <%= link_to "Edit this food", edit_food_path(@food) %> |
-  <%= link_to "Back to foods", foods_path %>
+  <% if @food.user_id == current_user.id %>
+    <%= link_to "Edit this food", edit_food_path(@food) %> |
+    <%= button_to "Destroy this food", @food, method: :delete %>
+  <% end %>
 
-  <%= button_to "Destroy this food", @food, method: :delete %>
+  <%= link_to "Back to foods", foods_path %>
 </div>
