@@ -14,7 +14,8 @@ a:active {
 
 .recipe_cont,
 .recipe_detail_cont,
-.generate_btn {
+.generate_btn,
+.update_food_btn {
   display: flex;
   justify-content: space-between;
 }
@@ -27,22 +28,26 @@ a:active {
   width: 60%;
 }
 
-.new_recipe_btn {
+.new_recipe_btn,
+.new_food_btn {
   text-align: right;
   margin-bottom: 3em;
 }
 
 // recipe#show
 
-.recipe_name {
+.recipe_name,
+.food_name {
   text-align: center;
 }
 
-.recipe_detail_cont {
+.recipe_detail_cont,
+.food_price {
   margin: 1.5em 0 2.5em 0;
 }
 
-.generate_btn {
+.generate_btn,
+.update_food_btn {
   margin: 1.5em 0 1.5em 0;
 }
 
