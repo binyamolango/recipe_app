@@ -16,13 +16,13 @@ RSpec.describe '/foods', type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Food. As you add validations to Food, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     skip('Add a hash of attributes valid for your model')
-  }
+  end
 
-  let(:invalid_attributes) {
+  let(:invalid_attributes) do
     skip('Add a hash of attributes invalid for your model')
-  }
+  end
 
   describe 'GET /index' do
     it 'renders a successful response' do
@@ -58,9 +58,9 @@ RSpec.describe '/foods', type: :request do
   describe 'POST /create' do
     context 'with valid parameters' do
       it 'creates a new Food' do
-        expect {
+        expect do
           post foods_url, params: { food: valid_attributes }
-        }.to change(Food, :count).by(1)
+        end.to change(Food, :count).by(1)
       end
 
       it 'redirects to the created food' do
@@ -71,12 +71,12 @@ RSpec.describe '/foods', type: :request do
 
     context 'with invalid parameters' do
       it 'does not create a new Food' do
-        expect {
+        expect do
           post foods_url, params: { food: invalid_attributes }
-        }.to change(Food, :count).by(0)
+        end.to change(Food, :count).by(0)
       end
 
-      it 'renders a response with 422 status (i.e. to display the 'new' template)' do
+      it 'renders a response with 422 status (i.e. to display the "new" template)' do
         post foods_url, params: { food: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
@@ -85,9 +85,9 @@ RSpec.describe '/foods', type: :request do
 
   describe 'PATCH /update' do
     context 'with valid parameters' do
-      let(:new_attributes) {
+      let(:new_attributes) do
         skip('Add a hash of attributes valid for your model')
-      }
+      end
 
       it 'updates the requested food' do
         food = Food.create! valid_attributes
@@ -105,7 +105,7 @@ RSpec.describe '/foods', type: :request do
     end
 
     context 'with invalid parameters' do
-      it 'renders a response with 422 status (i.e. to display the 'edit' template)' do
+      it 'renders a response with 422 status (i.e. to display the "edit" template)' do
         food = Food.create! valid_attributes
         patch food_url(food), params: { food: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
@@ -116,9 +116,9 @@ RSpec.describe '/foods', type: :request do
   describe 'DELETE /destroy' do
     it 'destroys the requested food' do
       food = Food.create! valid_attributes
-      expect {
+      expect do
         delete food_url(food)
-      }.to change(Food, :count).by(-1)
+      end.to change(Food, :count).by(-1)
     end
 
     it 'redirects to the foods list' do

@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'foods/edit', type: :view do
-  let(:food) {
-    Food.create!()
-  }
+  let(:food) do
+    Food.create!
+  end
 
   before(:each) do
     assign(:food, food)
@@ -12,7 +12,6 @@ RSpec.describe 'foods/edit', type: :view do
   it 'renders the edit food form' do
     render
 
-    assert_select 'form[action=?][method=?]', food_path(food), 'post' do
-    end
+    assert_select 'form[action=?][method=?]', food_path(food), 'post'
   end
 end
