@@ -1,3 +1,4 @@
+<div class="container">
 <% if @recipe.public || (can?(:update, Recipe) && @recipe.user_id == current_user.id) %>
 <% if can? :update, @recipe %>
 <div class="public-button-container">
@@ -82,3 +83,4 @@
 <% else %>
   <h2 class="recipe_name">This recipe is private</h2>
 <% end %>
+</div>

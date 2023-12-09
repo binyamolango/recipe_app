@@ -1,4 +1,5 @@
-h1>Shopping List for <%= current_user.name %></h1>
+<div class="container">
+<h1>Shopping List for <%= current_user.name %></h1>
 
 <div>
     <h3>Amount of food items to buy: <span><%= @recipe_foods.length %></span></h3>
@@ -15,16 +16,16 @@ h1>Shopping List for <%= current_user.name %></h1>
         </tr>
     </thead>
 <% else %>
-<table>
+<table class="table table-striped">
     <thead>
         <tr>
-            <th>Food</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Amount</th>
+            <th scope="col">Food</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Amount</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table-group-divider">
     <% @recipe_foods.each do |recipe|%>
         <tr>
             <td><%= recipe.food.name %> (<%= recipe.food.quantity %>)</td>
@@ -36,3 +37,4 @@ h1>Shopping List for <%= current_user.name %></h1>
 </tbody>
 </table>
 <% end %>
+</div>
