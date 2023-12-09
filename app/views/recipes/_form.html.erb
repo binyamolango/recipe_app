@@ -36,19 +36,6 @@
         <%= form.number_field :cooking_time, placeholder: "1", class: "form-control" %>
       </div>
     </div>
-    <fieldset class="row mb-3">
-      <legend class="col-form-label col-sm-2 pt-0">Privacy</legend>
-      <div class="col-sm-10">
-        <div class="form-check">
-          <%= form.radio_button :public, true, class: "form-check-input" %>
-          <%= form.label :public, "Public", class: "form-check-label" %>
-        </div>
-        <div class="form-check">
-          <%= form.radio_button :public, false, class: "form-check-input" %>
-          <%= form.label :public, "Private", class: "form-check-label" %>
-        </div>
-      </div>
-    </fieldset>
     <%= form.submit "Create recipe", class: "btn btn-primary" %>
   </form>
 <% end %>

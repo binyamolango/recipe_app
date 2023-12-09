@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: %i[ show edit update destroy ]
+  before_action :set_recipe, only: %i[show edit update destroy]
 
   # GET /recipes or /recipes.json
   def index
@@ -58,14 +58,25 @@ class RecipesController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_recipe
-      @recipe = Recipe.find(params[:id])
-    end
+  def toggle_public
+    @recipe = Recipe.find(params[:id])
+    @recipe.toggle!(:public)
+    redirect_to @recipe
+  end
 
-    # Only allow a list of trusted parameters through.
-    def recipe_params
-      params.require(:recipe).permit(:name, :description, :preparation_time, :cooking_time, :public)
-    end
+  def public_recipes
+    @public = Recipe.includes(:user, :recipe_foods).where(public: true).order('created_at DESC')
+  end
+
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def recipe_params
+    params.require(:recipe).permit(:name, :description, :preparation_time, :cooking_time, :public)
+  end
 end
