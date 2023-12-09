@@ -1,0 +1,11 @@
+<div class="container">
+
+  <%= render @recipe_food %>
+
+  <div>
+    <%= link_to "Back to recipe", recipe_recipe_foods_path %>
+
+    <%= button_to "Destroy this recipe food", [@recipe, @recipe_food], method: :delete, class: "btn btn-primary" %>
+  </div>
+
+</div>
