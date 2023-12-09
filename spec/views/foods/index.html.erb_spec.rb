@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "foods/index", type: :view do
+RSpec.describe 'foods/index', type: :view do
   before(:each) do
     assign(:foods, [
              Food.create!(),
@@ -8,7 +8,7 @@ RSpec.describe "foods/index", type: :view do
            ])
   end
 
-  it "renders a list of foods" do
+  it 'renders a list of foods' do
     render
     cell_selector = Rails::VERSION::STRING >= '7' ? 'div>p' : 'tr>td'
   end
