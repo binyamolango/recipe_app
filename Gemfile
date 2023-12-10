@@ -51,8 +51,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows]
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
+  gem 'rspec-rails', '~> 5.0'
 end
 
 group :development do
@@ -67,7 +66,6 @@ group :development do
   gem 'bootstrap', '~> 5.3.2'
   gem 'cancancan'
   gem 'dartsass-sprockets'
-  gem 'devise'
   gem 'jquery-rails'
   gem 'letter_opener'
 end
@@ -77,4 +75,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'shoulda-matchers', '~> 5.0'
 end
+
+gem 'devise'
