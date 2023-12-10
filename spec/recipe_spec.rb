@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
   let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 'password') }
-  subject { Recipe.new(name: 'Apple Pie', description: 'Delicious pie recipe', preparation_time: 30, cooking_time: 60, user: user) }
+  subject do
+    Recipe.new(name: 'Apple Pie', description: 'Delicious pie recipe', preparation_time: 30, cooking_time: 60, user:)
+  end
 
   it 'validates presence of name' do
     subject.name = nil

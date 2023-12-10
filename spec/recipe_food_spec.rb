@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe RecipeFood, type: :model do
   let(:recipe) { Recipe.create(name: 'Pasta', description: 'Delicious pasta recipe') }
   let(:food) { Food.create(name: 'Tomato', measurement_unit: 'grams', price: 0.5, quantity: 200) }
-  subject { RecipeFood.new(quantity: 300, recipe: recipe, food: food) }
+  subject { RecipeFood.new(quantity: 300, recipe:, food:) }
 
   it 'belongs to a recipe' do
     expect(subject.recipe).to eq recipe
