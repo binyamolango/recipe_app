@@ -17,6 +17,7 @@ a:active {
 .generate_btn {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .recipe_name h5 a {
@@ -90,19 +91,4 @@ a:active {
 .radio_field input {
   display: inline;
   width: auto;
-}
-
-#user_remember_me {
-  width: auto;
-  margin-right: 10px;
-}
-
-.remember-field {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.remember-me-label {
-  flex: 1;
 }
