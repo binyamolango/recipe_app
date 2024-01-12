@@ -20,8 +20,12 @@ a:active {
   align-items: center;
 }
 
-.recipe_name h5 a {
+.recipe_name h3 a {
   text-decoration: none;
+}
+
+.recipe_name h3 {
+  margin-bottom: 0.6em;
 }
 
 .recipe_desc {
@@ -35,11 +39,6 @@ a:active {
 }
 
 // recipe#show
-
-.recipe_name,
-.food_name {
-  text-align: center;
-}
 
 .recipe_detail_cont,
 .food_price {
