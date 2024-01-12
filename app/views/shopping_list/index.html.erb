@@ -2,7 +2,7 @@
 <h1>Shopping List for <%= current_user.name %></h1>
 
 <div>
-    <h3>Amount of food items to buy: <span><%= @recipe_foods.length %></span></h3>
+    <h3>Food items to buy: <span><%= @recipe_foods.length %></span></h3>
     <h3>Total value of food needed: <span>$<%= @recipe_foods.map { |r| r.food.price * (r.quantity - r.food.quantity) }.sum %></span></h3>
 </div>
 <% if @shopping_list.empty? %>
