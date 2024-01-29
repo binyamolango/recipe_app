@@ -26,9 +26,7 @@
           <%= button_to(@recipe.public? ? "Make Private" : "Make Public", toggle_recipe_public_path(@recipe), method: :put) %>
         </div>
       <% end %>
-      <%
-=begin%>
- <% if can?(:update, Recipe) %>
+      <% if can?(:update, Recipe) %>
         <%= form_with model: @recipe, id: "recipe_form", method: :patch do |f| %>
           <div class="form-check form-switch">
             <%= f.check_box :public, class: "form-check-input", id: "flexSwitchCheckChecked" %>
@@ -37,9 +35,7 @@
 
           <%= f.submit "Update Recipe", id: "submit_button", style: "display: none;" %>
         <% end %>
-      <% end %> 
-<%
-=end%>
+      <% end %>
     </div>
   </div>
 
