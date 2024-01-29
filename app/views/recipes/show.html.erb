@@ -1,10 +1,5 @@
 <div class="container">
 <% if @recipe.public || (can?(:update, Recipe) && @recipe.user_id == current_user.id) %>
-<% if can? :update, @recipe %>
-<div class="public-button-container">
-<%= button_to(@recipe.public? ? "Make Private" : "Make Public", toggle_recipe_public_path(@recipe), method: :put) %>
-</div>
-<% end %>
   <h1 class="recipe_name"><%= @recipe.name %></h1>
 
   <div class="recipe_detail_cont">
@@ -26,7 +21,14 @@
     </div>
 
     <div class="recipe_switch">
-      <% if can?(:update, Recipe) %>
+      <% if can? :update, @recipe %>
+        <div class="public-button-container">
+          <%= button_to(@recipe.public? ? "Make Private" : "Make Public", toggle_recipe_public_path(@recipe), method: :put) %>
+        </div>
+      <% end %>
+      <%
+=begin%>
+ <% if can?(:update, Recipe) %>
         <%= form_with model: @recipe, id: "recipe_form", method: :patch do |f| %>
           <div class="form-check form-switch">
             <%= f.check_box :public, class: "form-check-input", id: "flexSwitchCheckChecked" %>
@@ -35,7 +37,9 @@
 
           <%= f.submit "Update Recipe", id: "submit_button", style: "display: none;" %>
         <% end %>
-      <% end %>
+      <% end %> 
+<%
+=end%>
     </div>
   </div>
 
