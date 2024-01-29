@@ -17,8 +17,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_09_160751) do
   create_table "foods", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "measurement_unit", default: "grams", null: false
-    t.decimal "price", precision: 5, scale: 2
-    t.decimal "quantity", precision: 5, scale: 2
+    t.decimal "price"
+    t.decimal "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_09_160751) do
   end
 
   create_table "recipe_foods", force: :cascade do |t|
-    t.decimal "quantity", precision: 5, scale: 2
+    t.decimal "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "recipe_id", null: false
@@ -41,8 +41,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_09_160751) do
   create_table "recipes", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.text "description"
-    t.decimal "preparation_time", precision: 5, scale: 2
-    t.decimal "cooking_time", precision: 5, scale: 2
+    t.decimal "preparation_time"
+    t.decimal "cooking_time"
     t.boolean "public", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -64,6 +64,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_09_160751) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
